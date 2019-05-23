@@ -1,0 +1,213 @@
+<nav class="navbar navbar-expand-md" style="background-color:#225094">
+  <a class="navbar-brand" href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF1z2a81lxMpRA942xyhU-YIsjzvohfcyYrxoPOQbpUetQkC_wUg" style="width:30px">Logo</a>
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+  </div>
+
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="#">link1</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">link3</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+
+<br>
+
+    <!-- <div class="container"> -->
+        <div class="row">
+          <div class="col-sm-3 ml-3">
+              <!-- <ul class="nav flex-column" style="background-color:lightgray">
+                  <li class="nav-item" style="margin-top:10px">
+                      <div class="form-inline">
+                          
+                          <input class="form-control mr-sm-2 ml-4" type="search" placeholder="Search" aria-label="Search">
+                           <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+                          </div>
+                          <hr>
+                  </li>
+
+                  <li class="nav-item ml-4">
+                    <input type="checkbox" checked><label>Production</label>&nbsp;
+                    <input type="checkbox"><label>Non-Production</label>
+                    <hr>
+                  </li>
+                  
+                  <li class="nav-item ml-4">
+                    <a class="nav-link" href="#">Link1</a>
+                    <hr>
+                  </li>
+
+                  <li class="nav-item ml-4">
+                    <a class="nav-link" href="#">Link2</a>
+                    <hr>
+                  </li>
+
+                  <li class="nav-item ml-4">
+                    <a class="nav-link" href="#">Link3</a>
+                    <hr>
+                  </li>
+
+                  <li class="nav-item ml-4">
+                    <a class="nav-link" href="#">Link4</a>
+                    <hr>
+                  </li>
+
+                  <li class="nav-item ml-4">
+                    <a class="nav-link" href="#">Link5</a>
+                  </li>
+                </ul> -->
+
+                <ul class="list-group">
+                  
+                  <li class="list-group-item" aria-disabled="true">
+                      <div class="form-inline">                      
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-info my-2 my-sm-0" type="submit">Ok</button>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                      <input type="checkbox" checked><label>Production</label>&nbsp;
+                      <input type="checkbox"><label>Non-Production</label>
+                    </li>
+
+                  <li class="list-group-item">
+                     <a class="expand sidebarMenu">Link1</a>
+                     <ul class="abcd" style="display:none">
+                       <li class="unstyleli">Sub Menu Item</li>
+                       <li class="unstyleli">Sub Menu Item</li>
+                       <li class="unstyleli">Sub Menu Item</li>
+                     </ul>
+                 </li>
+
+                 <li class="list-group-item">
+                    <a class="expand sidebarMenu">Link2</a>
+                    <ul style="display:none">
+                      <li class="unstyleli">Sub Menu Item</li>
+                      <li class="unstyleli">Sub Menu Item</li>
+                      <li class="unstyleli">Sub Menu Item</li>
+                    </ul>
+                </li>
+
+                <li class="list-group-item">
+                    <a class="expand sidebarMenu">Link3</a>
+                    <ul style="display:none">
+                      <li class="unstyleli">Sub Menu Item</li>
+                      <li class="unstyleli">Sub Menu Item</li>
+                      <li class="unstyleli">Sub Menu Item</li>
+                    </ul>
+                </li>
+
+               </ul>
+
+          </div>
+          <div class="col-sm-8">
+            <div class="form-row">
+              <div class="col-sm-4">
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+
+            <br>
+
+            <div class="form-row">
+              <div class="col-sm-4">
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      <!-- </div> -->
+
+
+
+      <script>
+       $('.sidebarMenu').click(function(){
+         console.log("Hello");
+       })
+      </script>
+      
+      
+      
+      
+      
+      .unstyleli
+{
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-md" style="background-color:#225094">
+  <a class="navbar-brand" href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF1z2a81lxMpRA942xyhU-YIsjzvohfcyYrxoPOQbpUetQkC_wUg" style="width:30px">Logo</a>
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+  </div>
+
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="#">link1</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">link3</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+
+<br>
+
+<div class="container form-inline">
+    <input type="text" placeholder="Emp Id" class="form-control">
+    <input type="button" class="btn btn-primary" value="submit">
+    </div>
+
+
+
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './Component/login/login.component';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
+
+const routes: Routes = [{ path: 'login', component: LoginComponent },
+{ path: 'dashboard',      component: DashboardComponent },
+{ path: '',
+  redirectTo: '/login',
+  pathMatch: 'full'
+},
+{ path: '**', component: LoginComponent }];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
