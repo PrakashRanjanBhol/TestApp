@@ -1,0 +1,128 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EmployeeService {
+
+  private baseUrl = '';
+
+  constructor(private http: HttpClient) { }
+
+  getEmployee(id: number): Observable<Object> {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
+  createEmployee(employee: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/createEmp.php`, employee);
+  }
+
+  updateEmployee(employee: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/updateEmp.php`, employee);
+  }
+
+  deleteEmployee(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/deleteEmployee.php?id=${id}`);
+  }
+
+  getEmployeesList(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/employeeList.php`);
+  }
+
+  getRole(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/role.php`);
+  }
+
+  login(username: string,pwd:string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/login.php?username=${username}&pwd=${pwd}`);
+  }
+
+  getRequestType(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/requestType.php`);
+  }
+
+  requestSolutionSave(request: FormData): Observable<any> {
+    return this.http.post(`${this.baseUrl}/request_solution.php`, request);
+  }
+  
+  getRequestSolutionList(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/requestSolutionList.php`);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { EmployeeService } from './../employee.service';
+import { Employee } from './../employee';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styles: []
+})
+export class LoginComponent implements OnInit {
+
+   empDtls: Employee = new Employee();
+   userName:string;
+   pwd:string;
+
+  constructor(private _authService: AuthService,private employeeService: EmployeeService) { }
+
+  ngOnInit() {
+  }
+
+  login() {
+    //console.log(this.userName+" "+this.pwd);
+    if(this.userName && this.pwd)
+    {
+      this.employeeService.login(this.userName,this.pwd)
+        .subscribe(
+          data => {
+       // console.log(data.result[0].roleId);
+        if(data.status=="Success")
+        {
+          this.empDtls = new Employee();
+          if(data.result[0].roleId==1)
+          {
+            this._authService.loginAdmin(data.result[0].roleId);
+          }
+          else{
+            this._authService.login(data.result[0].roleId);
+          }
+        } 
+        else
+        {
+            alert("Please enter a correct username and password.");
+        }     
+      }, error => console.log(error));
+    }
+    else{
+      alert("Please enter username and password.");
+    }
+  }
+
+  /*loginAdmin() {
+    this._authService.loginAdmin();
+  }*/
+
+}
