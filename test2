@@ -1,0 +1,71 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+
+@Injectable()
+export class DataService {
+ 
+  private messageSource = new BehaviorSubject<any>('');
+  currentMessage = this.messageSource.asObservable();
+
+  constructor() { }
+
+  changeMessage(message:string){
+    this.messageSource.next(message);
+  }
+
+}
+
+
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../service/data.service';
+
+@Component({
+  selector: 'app-sidenav',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.css']
+})
+export class TestComponent implements OnInit {
+   
+  message:string;
+  constructor(private data:DataService) { }
+
+  ngOnInit() {
+  }
+
+  newMessage()
+  {
+    this.data.changeMessage(this.message);
+  }
+
+}
+
+
+
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../service/data.service';
+import * as $ from 'jquery';
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './testd.component.html',
+  styleUrls: ['./testd.component.css']
+})
+export class TestDComponent implements OnInit {
+
+  message:string;
+
+  constructor(private data:DataService) { }
+
+  ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.message= message)
+  }
+}
+
